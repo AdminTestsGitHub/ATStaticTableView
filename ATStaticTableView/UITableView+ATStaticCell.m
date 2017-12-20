@@ -20,6 +20,25 @@
 
 @implementation UITableView (ATStaticCell)
 
+#pragma mark - 方法-C对象、结构操作
+
+CG_INLINE BOOL
+ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
+    Method oriMethod = class_getInstanceMethod(_class, _originSelector);
+    Method newMethod = class_getInstanceMethod(_class, _newSelector);
+    if (!newMethod) {
+        // class 里不存在该方法的实现
+        return NO;
+    }
+    BOOL isAddedMethod = class_addMethod(_class, _originSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
+    if (isAddedMethod) {
+        class_replaceMethod(_class, _newSelector, method_getImplementation(oriMethod), method_getTypeEncoding(oriMethod));
+    } else {
+        method_exchangeImplementations(oriMethod, newMethod);
+    }
+    return YES;
+}
+
 + (void)load {
     ReplaceMethod([UITableView class], @selector(setDataSource:), @selector(at_setDataSource:));
     ReplaceMethod([UITableView class], @selector(setDelegate:), @selector(at_setDelegate:));
@@ -46,7 +65,7 @@ static NSMutableSet<NSString *> *at_staticTableViewAddedClass;
         }
         NSString *identifier = [NSString stringWithFormat:@"%@%@", NSStringFromClass(object.class), NSStringFromSelector(selector)];
         if (![at_staticTableViewAddedClass containsObject:identifier]) {
-            ATLogInfo(@"%@, 尝试为 %@ 添加方法 %@ 失败，可能该类里已经实现了这个方法", NSStringFromClass(self.class), NSStringFromClass(object.class), NSStringFromSelector(selector));
+            NSLog(@"%@, 尝试为 %@ 添加方法 %@ 失败，可能该类里已经实现了这个方法", NSStringFromClass(self.class), NSStringFromClass(object.class), NSStringFromSelector(selector));
             [at_staticTableViewAddedClass addObject:identifier];
         }
     }

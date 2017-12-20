@@ -6,6 +6,7 @@
 //  Copyright © 2017年 AdminTest. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, ATStaticTableViewCellType) {
@@ -93,26 +94,6 @@ typedef NS_ENUM(NSInteger, ATStaticTableViewCellType) {
 @property (nonatomic, assign) CGFloat    bottomLeftMargin;
 @property (nonatomic, assign) CGFloat    bottomRightMargin;
 
-+ (instancetype)staticTableViewCellDataWithIdentifier:(NSInteger)identifier
-                                                image:(UIImage *)image
-                                                 text:(NSString *)text
-                                           detailText:(NSString *)detailText
-                                      didSelectTarget:(id)didSelectTarget
-                                      didSelectAction:(SEL)didSelectAction
-                                        Type:(ATStaticTableViewCellType)Type;
-
-+ (instancetype)staticTableViewCellDataWithIdentifier:(NSInteger)identifier
-                                            cellClass:(Class)cellClass
-                                               height:(CGFloat)height
-                                                image:(UIImage *)image
-                                                 text:(NSString *)text
-                                           detailText:(NSString *)detailText
-                                      didSelectTarget:(id)didSelectTarget
-                                      didSelectAction:(SEL)didSelectAction
-                                        Type:(ATStaticTableViewCellType)Type
-                                 ValueObject:(NSObject *)ValueObject
-                                      Target:(id)Target
-                                      Action:(SEL)Action;
 
 + (UITableViewCellAccessoryType)systemTableViewCellAccessoryTypeWithATStaticTableViewCellType:(ATStaticTableViewCellType)type;
 

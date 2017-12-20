@@ -45,13 +45,13 @@
 
 - (ATStaticTableViewCellData *)cellDataAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section >= self.cellDataSections.count) {
-        ATLogInfo(@"cellDataWithIndexPath:%@, data not exist in section!", indexPath);
+        NSLog(@"cellDataWithIndexPath:%@, data not exist in section!", indexPath);
         return nil;
     }
     
     NSArray<ATStaticTableViewCellData *> *rowDatas = [self.cellDataSections objectAtIndex:indexPath.section];
     if (indexPath.row >= rowDatas.count) {
-        ATLogInfo(@"cellDataWithIndexPath:%@, data not exist in row!", indexPath);
+        NSLog(@"cellDataWithIndexPath:%@, data not exist in row!", indexPath);
         return nil;
     }
     
@@ -104,9 +104,7 @@
     
     // 1、分发选中事件（UISwitch 类型不支持 didSelect）
     if ([cellData.didSelectTarget respondsToSelector:cellData.didSelectAction] && cellData.type != ATStaticTableViewCellTypeSwitch) {
-        BeginIgnorePerformSelectorLeaksWarning
         [cellData.didSelectTarget performSelector:cellData.didSelectAction withObject:cellData];
-        EndIgnorePerformSelectorLeaksWarning
     }
     
     // 2、处理点击状态（对checkmark类型的cell，选中后自动反选）
@@ -118,9 +116,7 @@
 - (void)accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     ATStaticTableViewCellData *cellData = [self cellDataAtIndexPath:indexPath];
     if ([cellData.Target respondsToSelector:cellData.Action]) {
-        BeginIgnorePerformSelectorLeaksWarning
         [cellData.Target performSelector:cellData.Action withObject:cellData];
-        EndIgnorePerformSelectorLeaksWarning
     }
 }
 

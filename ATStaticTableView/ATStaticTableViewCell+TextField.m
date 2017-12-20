@@ -12,7 +12,7 @@
 
 - (void)configTextFieldCellWithCellData:(ATStaticTableViewCellData *)data;
 {
-    self.textField.size = CGSizeMake(200, 30);
+    self.textField.frame = CGRectMake(0, 0, 200, 30);
     self.accessoryView = self.textField;
 }
 

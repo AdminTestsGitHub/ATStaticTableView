@@ -62,7 +62,7 @@ static CGFloat kLineHeight = 0.5;
     
     if (self.data.title) {
         [self.titleLabel sizeToFit];
-        self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame) + kMargin, (self.height - self.titleLabel.frame.size.height) / 2, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
+        self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame) + kMargin, (self.frame.size.height - self.titleLabel.frame.size.height) / 2, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
     }
     
     if (self.data.subTitle) {
