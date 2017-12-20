@@ -47,12 +47,22 @@ ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
 static char kAssociatedObjectKey_staticCellDataSource;
 - (void)setAt_staticCellDataSource:(ATStaticTableViewCellDataSource *)at_staticCellDataSource {
     objc_setAssociatedObject(self, &kAssociatedObjectKey_staticCellDataSource, at_staticCellDataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    at_staticCellDataSource.tableView = self;
-    [self reloadData];
 }
 
 - (ATStaticTableViewCellDataSource *)at_staticCellDataSource {
     return (ATStaticTableViewCellDataSource *)objc_getAssociatedObject(self, &kAssociatedObjectKey_staticCellDataSource);
+}
+
+static char kAssociatedObjectKey_staticCellDelegate;
+- (void)setAt_staticCellDelegate:(id)at_staticCellDelegate {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey_staticCellDelegate, at_staticCellDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.delegate = at_staticCellDelegate;
+    self.dataSource = at_staticCellDelegate;
+    [self reloadData];
+}
+
+- (id)at_staticCellDelegate {
+    return objc_getAssociatedObject(self, &kAssociatedObjectKey_staticCellDelegate);
 }
 
 // 把那些已经手动 addMethod 过的 class 存起来，避免每次都触发 ATLog，打了一堆重复的信息

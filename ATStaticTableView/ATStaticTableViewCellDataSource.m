@@ -9,6 +9,7 @@
 #import "ATStaticTableViewCellDataSource.h"
 #import "ATStaticTableViewCellData.h"
 #import "ATStaticTableViewCell.h"
+#import "UITableView+ATStaticCell.h"
 
 @implementation ATStaticTableViewCellDataSource
 
@@ -29,8 +30,8 @@
 - (void)setTableView:(UITableView *)tableView {
     _tableView = tableView;
     // 触发 UITableView (AT_StaticCell) 里重写的 setter 里的逻辑
-    tableView.delegate = tableView.delegate;
-    tableView.dataSource = tableView.dataSource;
+    tableView.delegate = tableView.at_staticCellDelegate;
+    tableView.dataSource = tableView.at_staticCellDelegate;
 }
 
 @end

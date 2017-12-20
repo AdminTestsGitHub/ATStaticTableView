@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ATStaticTableViewHeader.h"
+#import "TableViewController.h"
 
 @interface ViewController ()
 
@@ -104,13 +105,13 @@
     }];
     
     self.tableView.at_staticCellDataSource = dataSource;
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    self.tableView.at_staticCellDelegate = self;
 }
 
 - (void)selectAction:(ATStaticTableViewCellData *)sender
 {
     NSLog(@"%ld", sender.identifier);
+    [self.navigationController pushViewController:[[TableViewController alloc] init] animated:YES];
 }
 
 - (void)switchAction:(UISwitch *)sender

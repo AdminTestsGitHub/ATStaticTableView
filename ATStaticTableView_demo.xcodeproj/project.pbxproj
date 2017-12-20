@@ -21,6 +21,8 @@
 		2048AF541FE913B900048711 /* ATStaticTableViewCell+TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF4E1FE913B800048711 /* ATStaticTableViewCell+TextField.m */; };
 		2048AF551FE913B900048711 /* ATStaticTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF4F1FE913B900048711 /* ATStaticTableViewCellDataSource.m */; };
 		2048AF561FE913B900048711 /* UITableView+ATStaticCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF501FE913B900048711 /* UITableView+ATStaticCell.m */; };
+		20F8A9B81FEA40E800620DF2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F8A9B61FEA40E800620DF2 /* TableViewController.m */; };
+		20F8A9B91FEA40E800620DF2 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F8A9B71FEA40E800620DF2 /* TableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		2048AF4E1FE913B800048711 /* ATStaticTableViewCell+TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ATStaticTableViewCell+TextField.m"; sourceTree = "<group>"; };
 		2048AF4F1FE913B900048711 /* ATStaticTableViewCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATStaticTableViewCellDataSource.m; sourceTree = "<group>"; };
 		2048AF501FE913B900048711 /* UITableView+ATStaticCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ATStaticCell.m"; sourceTree = "<group>"; };
+		20F8A9B51FEA40E800620DF2 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		20F8A9B61FEA40E800620DF2 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		20F8A9B71FEA40E800620DF2 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +130,9 @@
 				2048AEFF1FE9136000048711 /* AppDelegate.m */,
 				2048AF011FE9136000048711 /* ViewController.h */,
 				2048AF021FE9136000048711 /* ViewController.m */,
+				20F8A9B51FEA40E800620DF2 /* TableViewController.h */,
+				20F8A9B61FEA40E800620DF2 /* TableViewController.m */,
+				20F8A9B71FEA40E800620DF2 /* TableViewController.xib */,
 				2048AF041FE9136000048711 /* Main.storyboard */,
 				2048AF071FE9136000048711 /* Assets.xcassets */,
 				2048AF091FE9136000048711 /* LaunchScreen.storyboard */,
@@ -281,6 +289,7 @@
 				2048AF0B1FE9136000048711 /* LaunchScreen.storyboard in Resources */,
 				2048AF081FE9136000048711 /* Assets.xcassets in Resources */,
 				2048AF061FE9136000048711 /* Main.storyboard in Resources */,
+				20F8A9B91FEA40E800620DF2 /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +317,7 @@
 				2048AF511FE913B900048711 /* ATStaticTableViewCellData.m in Sources */,
 				2048AF031FE9136000048711 /* ViewController.m in Sources */,
 				2048AF541FE913B900048711 /* ATStaticTableViewCell+TextField.m in Sources */,
+				20F8A9B81FEA40E800620DF2 /* TableViewController.m in Sources */,
 				2048AF531FE913B900048711 /* ATStaticTableViewCell+Switch.m in Sources */,
 				2048AF0E1FE9136000048711 /* main.m in Sources */,
 				2048AF551FE913B900048711 /* ATStaticTableViewCellDataSource.m in Sources */,

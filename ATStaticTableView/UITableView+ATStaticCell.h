@@ -13,7 +13,8 @@
 /**
  *  配合 ATStaticTableViewCellDataSource 使用，主要负责：
  *  1. 提供 property 去绑定一个 static dataSource
- *  2. 重写 setDataSource:、setDelegate: 方法，自动实现 UITableViewDataSource、UITableViewDelegate 里一些必要的方法
+ *  2. 提供 property 去绑定一个 static delegate
+ *  3. 重写 setDataSource:、setDelegate: 方法，自动实现 UITableViewDataSource、UITableViewDelegate 里一些必要的方法
  *
  *  使用方式：初始化一个 ATStaticTableViewCellDataSource 并将其赋值给 at_staticCellDataSource 属性即可。
  *
@@ -21,6 +22,7 @@
  */
 @interface UITableView (ATStaticCell)
 
-@property(nonatomic, strong) ATStaticTableViewCellDataSource *at_staticCellDataSource;
+@property (nonatomic, strong) ATStaticTableViewCellDataSource *at_staticCellDataSource;
+@property (nonatomic, strong) id at_staticCellDelegate;
 
 @end
