@@ -21,6 +21,9 @@
 		2048AF541FE913B900048711 /* ATStaticTableViewCell+TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF4E1FE913B800048711 /* ATStaticTableViewCell+TextField.m */; };
 		2048AF551FE913B900048711 /* ATStaticTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF4F1FE913B900048711 /* ATStaticTableViewCellDataSource.m */; };
 		2048AF561FE913B900048711 /* UITableView+ATStaticCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2048AF501FE913B900048711 /* UITableView+ATStaticCell.m */; };
+		20A22A4F200F7FBC001D4DCE /* icon_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20A22A4B200F7FBC001D4DCE /* icon_arrow@3x.png */; };
+		20A22A50200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A22A4C200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.m */; };
+		20A22A51200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A22A4D200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.m */; };
 		20F8A9B81FEA40E800620DF2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F8A9B61FEA40E800620DF2 /* TableViewController.m */; };
 		20F8A9B91FEA40E800620DF2 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F8A9B71FEA40E800620DF2 /* TableViewController.xib */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,11 @@
 		2048AF4E1FE913B800048711 /* ATStaticTableViewCell+TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ATStaticTableViewCell+TextField.m"; sourceTree = "<group>"; };
 		2048AF4F1FE913B900048711 /* ATStaticTableViewCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATStaticTableViewCellDataSource.m; sourceTree = "<group>"; };
 		2048AF501FE913B900048711 /* UITableView+ATStaticCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ATStaticCell.m"; sourceTree = "<group>"; };
+		20A22A4A200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ATStaticTableViewCell+CustomAccessoryView.h"; sourceTree = "<group>"; };
+		20A22A4B200F7FBC001D4DCE /* icon_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_arrow@3x.png"; sourceTree = "<group>"; };
+		20A22A4C200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ATStaticTableViewCell+CustomDisclosureIndicator.m"; sourceTree = "<group>"; };
+		20A22A4D200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ATStaticTableViewCell+CustomAccessoryView.m"; sourceTree = "<group>"; };
+		20A22A4E200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ATStaticTableViewCell+CustomDisclosureIndicator.h"; sourceTree = "<group>"; };
 		20F8A9B51FEA40E800620DF2 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		20F8A9B61FEA40E800620DF2 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		20F8A9B71FEA40E800620DF2 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -163,6 +171,11 @@
 		2048AF431FE913B800048711 /* ATStaticTableView */ = {
 			isa = PBXGroup;
 			children = (
+				20A22A4B200F7FBC001D4DCE /* icon_arrow@3x.png */,
+				20A22A4A200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.h */,
+				20A22A4D200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.m */,
+				20A22A4E200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.h */,
+				20A22A4C200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.m */,
 				2048AF481FE913B800048711 /* ATStaticTableViewHeader.h */,
 				2048AF461FE913B800048711 /* ATStaticTableViewCell.h */,
 				2048AF4C1FE913B800048711 /* ATStaticTableViewCell.m */,
@@ -289,6 +302,7 @@
 				2048AF0B1FE9136000048711 /* LaunchScreen.storyboard in Resources */,
 				2048AF081FE9136000048711 /* Assets.xcassets in Resources */,
 				2048AF061FE9136000048711 /* Main.storyboard in Resources */,
+				20A22A4F200F7FBC001D4DCE /* icon_arrow@3x.png in Resources */,
 				20F8A9B91FEA40E800620DF2 /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +335,8 @@
 				2048AF531FE913B900048711 /* ATStaticTableViewCell+Switch.m in Sources */,
 				2048AF0E1FE9136000048711 /* main.m in Sources */,
 				2048AF551FE913B900048711 /* ATStaticTableViewCellDataSource.m in Sources */,
+				20A22A51200F7FBC001D4DCE /* ATStaticTableViewCell+CustomAccessoryView.m in Sources */,
+				20A22A50200F7FBC001D4DCE /* ATStaticTableViewCell+CustomDisclosureIndicator.m in Sources */,
 				2048AF521FE913B900048711 /* ATStaticTableViewCell.m in Sources */,
 				2048AF001FE9136000048711 /* AppDelegate.m in Sources */,
 				2048AF561FE913B900048711 /* UITableView+ATStaticCell.m in Sources */,

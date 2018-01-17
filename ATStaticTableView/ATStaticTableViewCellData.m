@@ -17,7 +17,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.cellClass = [UITableViewCell class];
-        self.height = 44;
+        self.height = 56;
     }
     return self;
 }

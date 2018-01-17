@@ -30,8 +30,8 @@
 - (void)setTableView:(UITableView *)tableView {
     _tableView = tableView;
     // 触发 UITableView (AT_StaticCell) 里重写的 setter 里的逻辑
-    tableView.delegate = tableView.at_staticCellDelegate;
-    tableView.dataSource = tableView.at_staticCellDelegate;
+//    tableView.delegate = tableView.at_staticCellDelegate;
+//    tableView.dataSource = tableView.at_staticCellDelegate;
 }
 
 @end
@@ -105,7 +105,9 @@
     
     // 1、分发选中事件（UISwitch 类型不支持 didSelect）
     if ([cellData.didSelectTarget respondsToSelector:cellData.didSelectAction] && cellData.type != ATStaticTableViewCellTypeSwitch) {
+//        BeginIgnorePerformSelectorLeaksWarning
         [cellData.didSelectTarget performSelector:cellData.didSelectAction withObject:cellData];
+//        EndIgnorePerformSelectorLeaksWarning
     }
     
     // 2、处理点击状态（对checkmark类型的cell，选中后自动反选）
@@ -117,7 +119,9 @@
 - (void)accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     ATStaticTableViewCellData *cellData = [self cellDataAtIndexPath:indexPath];
     if ([cellData.Target respondsToSelector:cellData.Action]) {
+//        BeginIgnorePerformSelectorLeaksWarning
         [cellData.Target performSelector:cellData.Action withObject:cellData];
+//        EndIgnorePerformSelectorLeaksWarning
     }
 }
 

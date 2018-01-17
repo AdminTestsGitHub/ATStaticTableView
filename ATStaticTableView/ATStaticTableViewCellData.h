@@ -20,7 +20,8 @@ typedef NS_ENUM(NSInteger, ATStaticTableViewCellType) {
     //拓展的
     ATStaticTableViewCellTypeCustomDisclosureIndicator,
     ATStaticTableViewCellTypeSwitch,
-    ATStaticTableViewCellTypeTextField
+    ATStaticTableViewCellTypeTextField,
+    ATStaticTableViewCellTypeCustomAccessoryView
 };
 
 /**
@@ -47,22 +48,25 @@ typedef NS_ENUM(NSInteger, ATStaticTableViewCellType) {
 
 /// cell 的文字，将会被设置到 cell.titleLabel.text
 @property(nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *titleColor;
+@property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, assign) CGFloat titleFont;
 
 /// cell 的详细文字，将会被设置到 cell.subTitleLabel.text
 @property(nonatomic, copy) NSString *subTitle;
-@property (nonatomic, copy) NSString *subTitleColor;
+@property (nonatomic, strong) UIColor *subTitleColor;
 @property (nonatomic, assign) CGFloat subTitleFont;
 
-/// cell 右边要显示的图片，将会被设置到 cell.placeHolderImageView.image
-@property(nonatomic, strong) UIImage *placeHolderImage;
+/// cell 右边要显示的图片
+@property (nonatomic, strong) UIImage *accessoryImage;
+@property (nonatomic, assign) CGSize accessoryImageSize;
 
-/// cell 右边的文字，将会被设置到 cell.placeHolderTitleLabel.text
-@property(nonatomic, copy) NSString *placeHolder;
+/// cell 右边的文字
+@property (nonatomic, copy) NSString *accessoryText;
+@property (nonatomic, strong) UIColor *accessoryTextColor;
+@property (nonatomic, assign) CGFloat accessoryTextFont;
 
-/// customView
-@property (nonatomic, strong) UIView *customView;
+/// customAccessoryView
+@property (nonatomic, strong) UIView *customAccessoryView;
 
 /// 当 cell 的点击事件被触发时，要由哪个对象来接收
 @property(nonatomic, assign) id didSelectTarget;

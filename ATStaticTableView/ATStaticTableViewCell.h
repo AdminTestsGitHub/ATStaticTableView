@@ -17,9 +17,13 @@
 @property (nonatomic, strong) UILabel *titleLabel;                      //左侧的Label
 @property (nonatomic, strong) UILabel *subTitleLabel;                   //左侧subLabel
 
-@property (nonatomic, strong) UIImageView *indicatorArrow;              //右侧的箭头
-@property (nonatomic, strong) UIImageView *placeHolderImageView;        //右侧的箭头的左边的imageview
-@property (nonatomic, strong) UILabel *placeHolderTitleLabel;           //右侧的箭头的左边的Label
+@property (nonatomic, strong) UIView *defaultAccessoryView;//Accessory content view
+@property (nonatomic, strong) UIImageView *defaultAccessoryDisclosureIndicatorImageView; //DisclosureIndicator
+@property (nonatomic, strong) UIImageView *defaultAccessoryImageView;//DisclosureIndicator 左边图片
+@property (nonatomic, strong) UILabel *defaultAccessoryTitleLabel;//DisclosureIndicator 左边label
+
+@property (nonatomic, strong) UIButton *defaultAccessoryButton;
+
 @property (nonatomic, strong) UISwitch *indicatorSwitch;                //右侧的开关
 @property (nonatomic, strong) UITextField *textField;                   //右侧输入框
 @property (nonatomic, strong) UIView *customView;                       //自定义view

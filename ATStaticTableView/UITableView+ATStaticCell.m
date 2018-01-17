@@ -11,17 +11,6 @@
 #import <objc/runtime.h>
 #import "ATStaticTableViewCell.h"
 
-@interface ATStaticTableViewCellDataSource ()
-
-@property(nonatomic, weak, readwrite) UITableView *tableView;
-
-@end
-
-
-@implementation UITableView (ATStaticCell)
-
-#pragma mark - 方法-C对象、结构操作
-
 CG_INLINE BOOL
 ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
     Method oriMethod = class_getInstanceMethod(_class, _originSelector);
@@ -39,6 +28,17 @@ ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
     return YES;
 }
 
+@interface ATStaticTableViewCellDataSource ()
+
+@property(nonatomic, weak, readwrite) UITableView *tableView;
+
+@end
+
+
+@implementation UITableView (ATStaticCell)
+
+#pragma mark - 方法-C对象、结构操作
+
 + (void)load {
     ReplaceMethod([UITableView class], @selector(setDataSource:), @selector(at_setDataSource:));
     ReplaceMethod([UITableView class], @selector(setDelegate:), @selector(at_setDelegate:));
@@ -47,6 +47,7 @@ ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
 static char kAssociatedObjectKey_staticCellDataSource;
 - (void)setAt_staticCellDataSource:(ATStaticTableViewCellDataSource *)at_staticCellDataSource {
     objc_setAssociatedObject(self, &kAssociatedObjectKey_staticCellDataSource, at_staticCellDataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    at_staticCellDataSource.tableView = self;
 }
 
 - (ATStaticTableViewCellDataSource *)at_staticCellDataSource {
@@ -135,3 +136,5 @@ void at_accessoryButtonTapped (id current_self, SEL current_cmd, UITableView *ta
 }
 
 @end
+
+

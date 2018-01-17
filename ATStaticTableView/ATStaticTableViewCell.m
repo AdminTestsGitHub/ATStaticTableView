@@ -10,7 +10,6 @@
 
 static CGFloat kPadding = 15;
 static CGFloat kMargin = 15;
-
 static CGFloat kLineHeight = 0.5;
 
 @implementation ATStaticTableViewCell
@@ -86,6 +85,22 @@ static CGFloat kLineHeight = 0.5;
 }
 
 #pragma mark - Getters And Setters
+// 重写accessoryType，如果是UITableViewCellAccessoryDisclosureIndicator类型的，则使用 QMUIConfigurationTemplate.m 配置表里的图片
+- (void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType {
+    [super setAccessoryType:accessoryType];
+    
+//    if (accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
+//        UIImage *indicatorImage = TableViewCellDisclosureIndicatorImage;
+//        if (indicatorImage) {
+//            self.defaultAccessoryImageView.image = indicatorImage;
+//            [self.defaultAccessoryImageView sizeToFit];
+//            self.accessoryView = self.defaultAccessoryImageView;
+//            return;
+//        }
+//    }
+}
+
+
 - (UIImageView *)iconImageView
 {
     if (!_iconImageView) {
@@ -108,30 +123,6 @@ static CGFloat kLineHeight = 0.5;
         _subTitleLabel = [[UILabel alloc] init];
     }
     return _subTitleLabel;
-}
-
-- (UIImageView *)indicatorArrow
-{
-    if (!_indicatorArrow) {
-        _indicatorArrow = [[UIImageView alloc] init];
-    }
-    return _indicatorArrow;
-}
-
-- (UIImageView *)placeHolderImageView
-{
-    if (!_placeHolderImageView) {
-        _placeHolderImageView = [[UIImageView alloc] init];
-    }
-    return _placeHolderImageView;
-}
-
-- (UILabel *)placeHolderTitleLabel
-{
-    if (!_placeHolderTitleLabel) {
-        _placeHolderTitleLabel= [[UILabel alloc] init];
-    }
-    return _placeHolderTitleLabel;
 }
 
 - (UISwitch *)indicatorSwitch
@@ -176,4 +167,41 @@ static CGFloat kLineHeight = 0.5;
     }
     return _bottomLine;
 }
+
+- (UIView *)defaultAccessoryView
+{
+    if (!_defaultAccessoryView) {
+        _defaultAccessoryView = [[UIView alloc] init];
+    }
+    return _defaultAccessoryView;
+}
+
+- (UIImageView *)defaultAccessoryDisclosureIndicatorImageView
+{
+    if (!_defaultAccessoryDisclosureIndicatorImageView) {
+        _defaultAccessoryDisclosureIndicatorImageView = [[UIImageView alloc] init];
+        _defaultAccessoryDisclosureIndicatorImageView.contentMode = UIViewContentModeCenter;
+        _defaultAccessoryDisclosureIndicatorImageView.image = [UIImage imageNamed:@"icon_arrow"];
+        [_defaultAccessoryDisclosureIndicatorImageView sizeToFit];
+    }
+    return _defaultAccessoryDisclosureIndicatorImageView;
+}
+
+- (UIImageView *)defaultAccessoryImageView
+{
+    if (!_defaultAccessoryImageView) {
+        _defaultAccessoryImageView = [[UIImageView alloc] init];
+    }
+    return _defaultAccessoryImageView;
+}
+
+- (UILabel *)defaultAccessoryTitleLabel
+{
+    if (!_defaultAccessoryTitleLabel) {
+        _defaultAccessoryTitleLabel = [[UILabel alloc] init];
+    }
+    return _defaultAccessoryTitleLabel;
+}
+
+
 @end
