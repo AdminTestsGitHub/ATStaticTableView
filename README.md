@@ -1,7 +1,9 @@
 
 <p align="center">
-<img src="https://cloud.githubusercontent.com/assets/1190261/26751376/63f96538-486a-11e7-81cf-5bc83a945207.png" width="220" height="220" alt="Banner" />
+<img src="https://user-images.githubusercontent.com/32261136/35045317-6736c9f8-fbce-11e7-8619-a170e3e3e416.jpeg" width="220" height="220" alt="Banner" />
 </p>
+
+
 
 # ATStaticTableView
 这个控件是为了方便地实现那种类似设置界面的列表
